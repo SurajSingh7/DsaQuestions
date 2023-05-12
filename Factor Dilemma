@@ -1,0 +1,62 @@
+//Factor Dilemma
+
+import java.util.*;
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    Scanner sc=new Scanner(System.in);
+	    int n=sc.nextInt();
+	    int x1[]=new int[n];
+	    int k1[]=new int[n];
+	    for(int i=0;i<n;i++){
+	        x1[i]=sc.nextInt();
+	    }
+	    for(int i=0;i<n;i++){
+	        k1[i]=sc.nextInt();
+	    }
+	   String s[]=new String[n];
+	   for(int j=0;j<n;j++){
+	       
+	        int x=x1[j];
+		   int k=k1[j];
+		   int count=0;
+		   while(x%2==0)
+		   {
+		       count++;
+		       x=x/2;
+		   }
+		   for(int i=3;i<Math.sqrt(x);i++)
+		   {
+		       while(x%i==0)
+		       {
+		           count++;
+		           x=x/i;
+		       }
+		   }
+		   if(x>=1)
+		   {
+		       count++;
+		   }
+		   if(count>=k)
+		   {
+		       s[j]="yes";
+		   }
+		   else
+		   {
+		       s[j]="no";
+		   }
+		
+	   }
+	   for(int i=0;i<n;i++){
+	       System.out.println(s[i]);
+	   }
+	   
+		
+	}
+	    
+}
+
+
+
+
