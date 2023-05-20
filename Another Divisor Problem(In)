@@ -1,0 +1,59 @@
+// Another Divisor Problem (infosys 24 april)
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		
+	 Scanner sc=new Scanner(System.in);
+	 int tc=sc.nextInt();
+	 while(tc-->0){
+	 
+	 int n=sc.nextInt();
+	 int a[]=new int[n];
+	 
+	 for(int i=0;i<n;i++){
+	     a[i]=sc.nextInt();
+	 }
+	 
+	 HashMap<Integer,Integer> hm=new HashMap<>();
+	 for(int i=0;i<n;i++){
+	     if(hm.containsKey(a[i]))
+	         hm.put(a[i],hm.get(a[i])+1);
+	     else
+	         hm.put(a[i],1);
+	 }
+		
+	ArrayList<Integer> l=new ArrayList<>();
+	for(int x:hm.keySet()){
+	    if(hm.get(x)==1)
+	     l.add(x);
+	}
+	Collections.sort(l);
+	for(int i=0;i<l.size();i++){
+	    
+	    if(l.get(i)!=(int)10e9){
+	    for(int j=i+1;j<l.size();j++){
+	        
+	        if(l.get(j)%l.get(i)==0)
+	         l.set(j,(int)10e9);
+	     }
+	     
+	    }
+	}
+	for(int i=0;i<l.size();i++){
+	    if(hm.containsKey(l.get(i)) && hm.get(l.get(i))>=2)
+	        l.set(i,(int)10e9);
+	}
+	
+	
+	int sum=0;
+	for(int x:l){
+	    if(x!=(int)10e9)
+	    sum++;
+	}
+		System.out.println(sum);
+	
+	 }
+		
+	}
+}
