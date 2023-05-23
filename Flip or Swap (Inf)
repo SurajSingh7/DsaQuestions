@@ -1,0 +1,35 @@
+// Flip or Swap (Infosys 24 april)
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		int tc=3; 
+		while(tc-->0){
+		String s=sc.nextLine();
+		
+		 int c0=0,c1=0,d0=0,d1=0;
+
+      for(int i=0;i<s.length();i++){
+        char ch=s.charAt(i);
+        // case 1
+        if(i%2==0 && ch!='0')c1++;
+        if(i%2==1 && ch!='1')c0++;
+        
+        // case 2
+          if(i%2==0 && ch!='1')d0++;
+          if(i%2==1 && ch!='0')d1++;
+      }
+      
+      int k1=Math.abs(c1-c0);
+      int k2=Math.abs(d1-d0);
+      
+      System.out.println(Math.min(k1+c1,k2+d1));
+		
+		}
+		
+	}
+}
+
