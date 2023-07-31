@@ -1,0 +1,36 @@
+class Solution {
+    public int[][] generateMatrix(int n) {
+        
+        int r=n,c=n,k=0;
+        int sr=0,er=r-1,sc=0,ec=c-1;
+        int m[][]=new int[n][n];
+        
+        while(true) { 
+            // Starting row sr
+            for(int i=sc;i<=ec;i++){
+                m[sr][i]=k=k+1;
+            }  sr++;
+            if(k==r*c) break;
+
+            // Ending column ec
+            for(int i=sr;i<=er;i++){
+                m[i][ec]=k=k+1;
+            } ec--;
+            if(k==r*c) break;
+            
+            // ending row er
+            for(int i=ec;i>=sc;i--){
+                 m[er][i]=k=k+1;
+            } er--;
+            if(k==r*c) break;
+
+            // Staring column sc
+            for(int i=er;i>=sr;i--){
+                m[i][sc]=k=k+1;
+            }sc++;
+            if(k==r*c) break;
+        }
+        return m;
+
+    }
+}
