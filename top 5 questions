@@ -44,8 +44,3 @@ I solved following code problem which were interesting/challenging.
 4.Java: Swap sort Algorithm(It is not sorting algorithm but very imp algo for if integer given 0 to n (n->arr.length) in questions
         then we can solve very easy way through Swap sort with tc->O(n) ,sc->O(1) ).
 
-
-5.Java: a. Given an array(like-arr), find next greater element for every element(if no greater element exist -> -1).
-           input - arr[]=[3,6,1,10]
-           output -[6,10,10,-1]
-           note-(v.v.imp  Sc->O(1),Tc-O(n)).
